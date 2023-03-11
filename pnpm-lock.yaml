@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@geist-ui/core': ^2.3.8
+  '@heroicons/react': ^2.0.16
   '@tanstack/react-query': ^4.26.1
   '@trpc/client': ^10.15.0
   '@trpc/next': ^10.15.0
@@ -25,6 +26,7 @@ specifiers:
 
 dependencies:
   '@geist-ui/core': 2.3.8_biqbaboplfbrettd7655fr4n2y
+  '@heroicons/react': 2.0.16_react@18.2.0
   '@tanstack/react-query': 4.26.1_biqbaboplfbrettd7655fr4n2y
   '@trpc/client': 10.15.0_@trpc+server@10.15.0
   '@trpc/next': 10.15.0_wlm23eclznxypezh5ngdziwcdq
@@ -103,6 +105,14 @@ packages:
       '@babel/runtime': 7.21.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@heroicons/react/2.0.16_react@18.2.0:
+    resolution: {integrity: sha512-x89rFxH3SRdYaA+JCXwfe+RkE1SFTo9GcOkZettHer71Y3T7V+ogKmfw5CjTazgS3d0ClJ7p1NA+SP7VQLQcLw==}
+    peerDependencies:
+      react: '>= 16'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /@humanwhocodes/config-array/0.11.8:
