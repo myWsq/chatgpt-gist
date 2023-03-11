@@ -11,3 +11,8 @@ body,
 html, body, * {
   -webkit-tap-highlight-color: transparent;
 }
+
+.hide-border.active {
+  font-weight: normal !important;
+  text-shadow: 0.5px 0 0 currentColor;
+}

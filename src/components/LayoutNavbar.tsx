@@ -11,7 +11,7 @@ const RouterTab: React.FunctionComponent = () => {
     <Tabs
       hideDivider
       hideBorder
-      className="[&_.content]:hidden [&_.active]:!text-blue-500 [&_.active]:!font-normal"
+      className="[&_.content]:hidden"
       value={value}
       onChange={(value) => router.push(`/${value}`)}
     >
@@ -29,9 +29,11 @@ export const LayoutNavbar: React.FunctionComponent = () => {
   return (
     <nav className="flex items-center h-12 md:h-14 border-b px-4 sm:px-8">
       <Logo></Logo>
-      <div className="flex-grow"></div>
+      <div className="flex-grow sm:hidden"></div>
+      <div className="hidden sm:block w-4"></div>
       <RouterTab></RouterTab>
-      <div className="hidden md:block ml-4">
+      <div className="hidden flex-grow sm:block"></div>
+      <div className="hidden sm:block">
         {user?.image && <Avatar src={user.image}></Avatar>}
       </div>
     </nav>
