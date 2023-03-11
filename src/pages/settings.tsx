@@ -8,7 +8,7 @@ export const Page: NextPageWithLayout = () => {
       <div className="h-8 sm:h-12"></div>
       <h1 className="text-2xl font-semibold">Settings</h1>
       <p className="mt-1 text-geist-accent-5">
-        Change your settings and store to you gist.
+        Change your settings and store to your gist.
       </p>
       <div className="h-8"></div>
       <CardApiKey></CardApiKey>
