@@ -1,12 +1,10 @@
 import { Avatar, Tabs } from "@geist-ui/core";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/router";
 import { Logo } from "./Logo";
 
 export const LayoutNavbar: React.FunctionComponent = () => {
   const { data: session } = useSession();
   const user = session?.user;
-  const router = useRouter();
 
   return (
     <nav className="flex items-center h-12 md:h-14 border-b px-4 sm:px-8">
