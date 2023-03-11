@@ -8,8 +8,6 @@ export default function Home() {
     name: "Bob",
   });
 
-  console.log(session);
-
   if (session) {
     return (
       <>
