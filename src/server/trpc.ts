@@ -1,4 +1,5 @@
 import { initTRPC, TRPCError } from "@trpc/server";
+import { Session } from "next-auth";
 import { Context } from "./context";
 
 const t = initTRPC.context<Context>().create();
@@ -7,7 +8,7 @@ const t = initTRPC.context<Context>().create();
  * Reusable middleware that checks if users are authenticated.
  **/
 const isAuth = t.middleware(({ next, ctx }) => {
-  if (!ctx.session?.user?.email) {
+  if (!ctx.token?.accessToken) {
     throw new TRPCError({
       code: "UNAUTHORIZED",
     });
@@ -15,7 +16,7 @@ const isAuth = t.middleware(({ next, ctx }) => {
   return next({
     ctx: {
       // Infers the `session` as non-nullable
-      session: ctx.session,
+      accessToken: ctx.token.accessToken,
     },
   });
 });

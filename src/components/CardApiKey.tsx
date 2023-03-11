@@ -1,7 +1,21 @@
+import { trpc } from "@/utils/trpc";
 import { Button, Input } from "@geist-ui/core";
+import { useEffect, useState } from "react";
 import { Card } from "./Card";
 
 export const CardApiKey: React.FunctionComponent = () => {
+  const { data: settings, refetch } = trpc.getSettings.useQuery();
+  const { mutateAsync: updateSettings, isLoading: updateSettingsPending } =
+    trpc.updateSettings.useMutation();
+
+  const [input, setInput] = useState("");
+
+  useEffect(() => {
+    if (settings) {
+      setInput(settings.apiKey);
+    }
+  }, [settings]);
+
   return (
     <Card
       title="API Key"
@@ -20,7 +34,17 @@ export const CardApiKey: React.FunctionComponent = () => {
         </>
       }
       footer={
-        <Button auto type="secondary" scale={0.75}>
+        <Button
+          auto
+          type="secondary"
+          scale={0.75}
+          disabled={!settings}
+          loading={updateSettingsPending}
+          onClick={async () => {
+            await updateSettings({ apiKey: input });
+            await refetch();
+          }}
+        >
           Save
         </Button>
       }
@@ -28,8 +52,10 @@ export const CardApiKey: React.FunctionComponent = () => {
       <Input
         width="100%"
         className="max-w-md"
-        placeholder="sk-d2uvwFR..."
-        htmlType="password"
+        placeholder={!settings ? "Loading..." : ""}
+        value={input}
+        onChange={(e) => setInput(e.currentTarget.value)}
+        disabled={!settings}
       ></Input>
     </Card>
   );

@@ -18,13 +18,17 @@
     "@trpc/server": "^10.15.0",
     "clsx": "^1.2.1",
     "inter-ui": "^3.19.3",
+    "jotai": "^2.0.3",
+    "memoizee": "^0.4.15",
     "next": "13.2.4",
     "next-auth": "^4.20.1",
+    "octokit": "^2.0.14",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@types/memoizee": "^0.4.8",
     "@types/node": "18.15.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
