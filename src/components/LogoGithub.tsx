@@ -1,7 +1,7 @@
 export const LogoGithub: React.FunctionComponent = () => {
   return (
     <svg
-      fill="#FFFFFF"
+      fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 30 30"
       width="30"
