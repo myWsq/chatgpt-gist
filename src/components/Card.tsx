@@ -24,7 +24,7 @@ export const Card: React.FunctionComponent<CardSettingsProps> = ({
           className={clsx("px-6 pt-6", children || footer ? "pb-4" : "pb-6")}
         >
           {title && (
-            <div className="text-xl font-semibold text-geist-foreground">
+            <div className="text-lg font-semibold text-geist-foreground">
               {title}
             </div>
           )}
