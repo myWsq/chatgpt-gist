@@ -1,10 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    colors: {
+      transparent: "transparent",
+      current: "currentColor",
+      inherit: "inherit",
+      ...require("./scripts/geist-palette.js")(),
+    },
+    borderColor: {
+      DEFAULT: "var(--geist-border)",
+    },
   },
   plugins: [],
-}
+};

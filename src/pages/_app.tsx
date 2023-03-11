@@ -4,6 +4,7 @@ import { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react";
 import { trpc } from "@/utils/trpc";
 import { NextPage } from "next";
+import { PaletteInject } from "@/components/PaletteInject";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: React.ReactElement) => React.ReactNode;
@@ -22,6 +23,7 @@ function MyApp({
 
   return (
     <SessionProvider session={session}>
+      <PaletteInject></PaletteInject>
       {getLayout(<Component {...pageProps} />)}
     </SessionProvider>
   );
