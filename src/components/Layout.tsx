@@ -1,6 +1,7 @@
 import { Spinner } from "@geist-ui/core";
 import { useSession } from "next-auth/react";
 import { PropsWithChildren } from "react";
+import { LayoutNavbar } from "./LayoutNavbar";
 import { PanelLogin } from "./PanelLogin";
 
 export const Layout: React.FunctionComponent<PropsWithChildren> = ({
@@ -17,8 +18,13 @@ export const Layout: React.FunctionComponent<PropsWithChildren> = ({
   }
 
   if (status === "authenticated") {
-    return <>{children}</>;
+    return (
+      <>
+        <LayoutNavbar></LayoutNavbar>
+        {children}
+      </>
+    );
   }
-  
+
   return <PanelLogin></PanelLogin>;
 };
