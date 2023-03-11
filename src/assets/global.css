@@ -7,3 +7,7 @@ body,
 #__next {
   height: 100%;
 }
+
+html, body, * {
+  -webkit-tap-highlight-color: transparent;
+}
