@@ -52,7 +52,7 @@ export const CardApiKey: React.FunctionComponent = () => {
       <Input
         width="100%"
         className="max-w-md"
-        placeholder={!settings ? "Loading..." : ""}
+        placeholder={!settings ? "Loading..." : "sk-Huukiat......."}
         value={input}
         onChange={(e) => setInput(e.currentTarget.value)}
         disabled={!settings}
