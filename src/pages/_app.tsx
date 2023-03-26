@@ -1,29 +1,22 @@
 import "../assets/global.css";
-import "inter-ui/inter.css";
 import { AppProps } from "next/app";
 import { trpc } from "@/utils/trpc";
-import { NextPage } from "next";
 import { PaletteInject } from "@/components/PaletteInject";
+import Head from "next/head";
 
-export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
-  getLayout?: (page: React.ReactElement) => React.ReactNode;
-};
-
-type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout;
-};
-
-function MyApp({
-  Component,
-  pageProps: { session, ...pageProps },
-}: AppPropsWithLayout) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   // Use the layout defined at the page level, if available
-  const getLayout = Component.getLayout ?? ((page) => page);
 
   return (
     <>
+      <Head>
+        <link
+          rel="stylesheet"
+          href="https://font.sec.miui.com/font/css?family=MiSans:300,450,500,650:Chinese_Simplify,Latin&display=swap"
+        ></link>
+      </Head>
       <PaletteInject></PaletteInject>
-      {getLayout(<Component {...pageProps} />)}
+      <Component {...pageProps} />
     </>
   );
 }

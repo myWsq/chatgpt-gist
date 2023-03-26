@@ -41,7 +41,7 @@ const colorNames = [
 module.exports = () => {
   const colors = {};
   colorNames.forEach((name) => {
-    colors["geist" + "-" + name] = `var(--geist-${name})`;
+    colors["geist" + "-" + name] = `rgb(var(--geist-${name}) / <alpha-value>)`;
   });
   return colors;
 };

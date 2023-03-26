@@ -9,7 +9,18 @@ module.exports = {
       ...require("./scripts/geist-palette.js")(),
     },
     borderColor: {
-      DEFAULT: "var(--geist-border)",
+      DEFAULT: "rgb(var(--geist-border))",
+    },
+    fontFamily: {
+      sans: ["MiSans", "sans-serif"],
+      mono: ["JetBrains Mono", "monospace"],
+    },
+    fontWeight: {
+      DEFAULT: 450,
+      light: 300,
+      normal: 450,
+      medium: 500,
+      bold: 600,
     },
   },
   plugins: [],

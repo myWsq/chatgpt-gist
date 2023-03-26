@@ -15,8 +15,6 @@ export function middleware(req: NextRequest) {
         .toString()
         .split(":");
 
-      console.log(req.url, user, pwd);
-
       if (user === exceptUser && pwd === exceptPassword) {
         return NextResponse.next();
       }

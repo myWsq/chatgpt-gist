@@ -8,11 +8,13 @@ body,
   height: 100%;
 }
 
-html, body, * {
-  -webkit-tap-highlight-color: transparent;
+html,
+body {
+  font-weight: 450;
+  font-size: 16px;
+  @apply text-geist-foreground selection:bg-geist-accent-2 bg-geist-background;
 }
 
-.hide-border.active {
-  font-weight: normal !important;
-  text-shadow: 0.5px 0 0 currentColor;
+* {
+  -webkit-tap-highlight-color: transparent;
 }
