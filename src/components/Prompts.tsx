@@ -7,6 +7,7 @@ import {
 import clsx from "clsx";
 import { atom, useAtomValue, useSetAtom } from "jotai";
 import { atomFamily } from "jotai/utils";
+import { ModalCreatePrompt } from "./ModalCreatePrompt";
 
 export const ActivePromptId = atom<string | null>(null);
 
@@ -46,6 +47,8 @@ export const Prompts: React.FunctionComponent = () => {
   const { data: prompts } = trpc.listPrompt.useQuery();
   const setActivePromptId = useSetAtom(ActivePromptId);
 
+  const { open: openCreatePromptModal } = ModalCreatePrompt.useHandler();
+
   return (
     <>
       <div className="h-6"></div>
@@ -63,7 +66,10 @@ export const Prompts: React.FunctionComponent = () => {
       {/* Create Prompt */}
       <div className="flex items-center justify-between pl-4 pr-2">
         <p className="text-xs font-bold text-geist-accent-4/50">Prompts</p>
-        <button className="p-2 text-geist-accent-4 hover:text-geist-link">
+        <button
+          className="p-2 text-geist-accent-4 hover:text-geist-link"
+          onClick={() => openCreatePromptModal()}
+        >
           <PlusCircleIcon className="w-5" />
         </button>
       </div>

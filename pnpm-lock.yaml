@@ -17,6 +17,7 @@ specifiers:
   eslint: 8.36.0
   eslint-config-next: 13.2.4
   hex-rgb: ^5.0.0
+  immer: ^9.0.21
   inter-ui: ^3.19.3
   jotai: ^2.0.3
   meilisearch: ^0.31.1
@@ -42,6 +43,7 @@ dependencies:
   '@trpc/server': 10.15.0
   clsx: 1.2.1
   hex-rgb: 5.0.0
+  immer: 9.0.21
   inter-ui: 3.19.3
   jotai: 2.0.3_react@18.2.0
   meilisearch: 0.31.1
@@ -1903,6 +1905,10 @@ packages:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
     engines: {node: '>= 4'}
     dev: true
+
+  /immer/9.0.21:
+    resolution: {integrity: sha512-bc4NBHqOqSfRW7POMkHd51LvClaeMXpm8dx0e8oE2GORbq5aRK7Bxl4FyzVLdGtLmvLKL7BTDBG5ACQm4HWjTA==}
+    dev: false
 
   /import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
