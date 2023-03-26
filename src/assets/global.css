@@ -12,7 +12,13 @@ html,
 body {
   font-weight: 450;
   font-size: 16px;
-  @apply text-geist-foreground selection:bg-geist-accent-2 bg-geist-background;
+  @apply subpixel-antialiased bg-white dark:bg-slate-900;
+}
+
+html,
+body,
+* {
+  @apply dark:border-gray-800;
 }
 
 * {

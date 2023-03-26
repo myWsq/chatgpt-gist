@@ -1,8 +1,18 @@
+import { cn } from "@/utils/cn";
 import { createModal } from "@/utils/create-modal";
-import { Input, Modal, Textarea } from "@geist-ui/core";
-import clsx from "clsx";
 import produce from "immer";
 import { useState } from "react";
+import { Button } from "./ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "./ui/dialog";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
 
 export const ModalCreatePrompt = createModal((control, props) => {
   const [form, setForm] = useState({
@@ -13,12 +23,21 @@ export const ModalCreatePrompt = createModal((control, props) => {
   const isSubmitEnabled = Boolean(form.title && form.content);
 
   return (
-    <Modal {...control}>
-      <Modal.Title>Create Prompt</Modal.Title>
-      <Modal.Content>
+    <Dialog
+      open={control.visible}
+      onOpenChange={(val) => !val && control.onClose?.()}
+    >
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Create Prompt</DialogTitle>
+          <DialogDescription>
+            Create a new prompt to use in your session.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="h-2"></div>
         <Input
-          label="Title"
-          width="100%"
+          placeholder="Title"
+          autoFocus
           onChange={(e) =>
             setForm(
               produce((d) => {
@@ -27,11 +46,8 @@ export const ModalCreatePrompt = createModal((control, props) => {
             )
           }
         ></Input>
-        <div className="h-4"></div>
         <Textarea
-          width="100%"
           placeholder="Enter the content of your prompt"
-          resize="vertical"
           onChange={(e) =>
             setForm(
               produce((d) => {
@@ -40,16 +56,17 @@ export const ModalCreatePrompt = createModal((control, props) => {
             )
           }
         ></Textarea>
-      </Modal.Content>
-      <Modal.Action passive onClick={() => control.onClose?.()}>
-        Cancel
-      </Modal.Action>
-      <Modal.Action
-        disabled={!isSubmitEnabled}
-        className={clsx(!isSubmitEnabled && "text-geist-accent-1")}
-      >
-        Submit
-      </Modal.Action>
-    </Modal>
+        <DialogFooter>
+          <Button
+            onClick={() => control.onClose?.()}
+            className={cn("mt-2 sm:mt-0")}
+            variant="outline"
+          >
+            Cancel
+          </Button>
+          <Button disabled={!isSubmitEnabled}>Submit</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 });
