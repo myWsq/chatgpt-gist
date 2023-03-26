@@ -8,9 +8,7 @@ module.exports = {
       inherit: "inherit",
       ...require("./scripts/geist-palette.js")(),
     },
-    borderColor: {
-      DEFAULT: "rgb(var(--geist-border))",
-    },
+
     fontFamily: {
       sans: ["MiSans", "sans-serif"],
       mono: ["JetBrains Mono", "monospace"],
@@ -21,6 +19,11 @@ module.exports = {
       normal: 450,
       medium: 500,
       bold: 600,
+    },
+    extend: {
+      borderColor: {
+        DEFAULT: "rgb(var(--geist-border))",
+      },
     },
   },
   plugins: [],
