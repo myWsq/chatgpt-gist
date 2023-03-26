@@ -1,10 +1,8 @@
 import { router } from "../trpc";
-import { getSettings } from "./get-settings";
-import { updateSettings } from "./update-settings";
+import { sayHi } from "./say-hi";
 
 export const appRouter = router({
-  getSettings: getSettings(),
-  updateSettings: updateSettings(),
+  sayHi: sayHi(),
 });
 
 // export type definition of API

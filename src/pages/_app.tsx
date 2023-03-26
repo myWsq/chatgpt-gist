@@ -1,7 +1,6 @@
 import "../assets/global.css";
 import "inter-ui/inter.css";
 import { AppProps } from "next/app";
-import { SessionProvider } from "next-auth/react";
 import { trpc } from "@/utils/trpc";
 import { NextPage } from "next";
 import { PaletteInject } from "@/components/PaletteInject";
@@ -22,10 +21,10 @@ function MyApp({
   const getLayout = Component.getLayout ?? ((page) => page);
 
   return (
-    <SessionProvider session={session}>
+    <>
       <PaletteInject></PaletteInject>
       {getLayout(<Component {...pageProps} />)}
-    </SessionProvider>
+    </>
   );
 }
 
